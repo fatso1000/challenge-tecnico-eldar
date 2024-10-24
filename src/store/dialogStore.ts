@@ -10,6 +10,9 @@ type Actions = {
   handleClose: () => void;
 };
 
+/**
+ * Stored used for dialog variables and methods
+ */
 const dialogStore = create<State & Actions>()((set) => ({
   isOpen: false,
   id: undefined,

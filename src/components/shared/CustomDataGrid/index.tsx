@@ -1,5 +1,5 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { paginationModel } from "../../shared/constants";
+import { paginationModel } from "@shared/constants";
 
 function CustomDataGrid<T>({
   CustomToolbar,
@@ -32,7 +32,7 @@ function CustomDataGrid<T>({
       disableColumnFilter
       disableRowSelectionOnClick
       initialState={{ pagination: { paginationModel } }}
-      pageSizeOptions={[10, 15]}
+      pageSizeOptions={[10, 15, 20, 30, 40]}
       sx={{ border: 0 }}
     />
   );

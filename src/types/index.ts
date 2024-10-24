@@ -4,6 +4,12 @@ export enum UserRoleEnum {
   unauth = "unauth",
 }
 
+export interface PetitionResponse<T> {
+  errors: string[];
+  message: string | undefined;
+  data: T;
+}
+
 export interface IUser {
   id: number;
   name: string;

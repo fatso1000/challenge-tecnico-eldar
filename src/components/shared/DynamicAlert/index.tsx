@@ -1,5 +1,5 @@
 import { Snackbar, Alert } from "@mui/material";
-import alertStore from "../../store/alertStore";
+import alertStore from "@store/alertStore";
 
 function DynamicAlert() {
   const { isOpen, message, severity, closeAlert } = alertStore();

@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import DynamicAlert from "./components/DynamicAlert/index.tsx";
+import DynamicAlert from "@components/shared/DynamicAlert";
 
 const darkTheme = createTheme({
   palette: {

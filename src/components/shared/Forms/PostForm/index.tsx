@@ -1,6 +1,6 @@
 import { Box, TextField } from "@mui/material";
 import React from "react";
-import { IPost } from "../../../types";
+import { IPost } from "../../../../types";
 
 function PostForm({
   formData,

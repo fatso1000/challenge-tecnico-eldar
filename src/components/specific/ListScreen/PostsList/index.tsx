@@ -9,22 +9,22 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import FormDialog from "../../FormDialog";
+import FormDialog from "@components/shared/FormDialog";
 import {
   addPost,
   deletePost,
   getPost,
   getPostsList,
   updatePost,
-} from "../../../queryFn";
-import dialogStore from "../../../store/dialogStore";
-import alertStore from "../../../store/alertStore";
-import userStore from "../../../store/mainStore";
-import PostForm from "../../Forms/PostForm";
-import { IPost, UserRoleEnum } from "../../../types";
-import { columnsInitial, initialFormDataPost } from "../../../shared/constants";
-import RemoveModal from "../../RemoveModal";
-import CustomDataGrid from "../../CustomDataGrid";
+} from "@queryFn/index";
+import dialogStore from "@store/dialogStore";
+import alertStore from "@store/alertStore";
+import userStore from "@store/mainStore";
+import PostForm from "@components/shared/Forms/PostForm";
+import { IPost, UserRoleEnum } from "../../../../types";
+import { columnsInitial, initialFormDataPost } from "@shared/constants";
+import RemoveModal from "@components/specific/RemoveModal";
+import CustomDataGrid from "@components/shared/CustomDataGrid";
 
 export default function PostList() {
   const [isEdit, setIsEdit] = useState(false);
@@ -168,7 +168,16 @@ export default function PostList() {
   ];
 
   return (
-    <Paper sx={{ height: 550, width: "100%", px: 2 }}>
+    <Paper
+      sx={{
+        height: 550,
+        width: "100%",
+        maxWidth: "lg",
+        px: 2,
+        mt: 2,
+        mx: "auto",
+      }}
+    >
       <CustomDataGrid
         disableToolbar={user.userRole === UserRoleEnum.user}
         columns={columns}

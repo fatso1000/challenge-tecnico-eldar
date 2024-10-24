@@ -9,11 +9,15 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import userStore from "../../store/mainStore";
-import { logoutUserAuth } from "../../shared/authService";
+import userStore from "@store/mainStore";
+import { logoutUserAuth } from "@shared/authService";
 
 const settings = ["Logout"];
 
+/**
+ * Responsive navbar for user and admin.
+ * @returns JSX.Element
+ */
 function ResponsiveAppBar() {
   const store = userStore();
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
@@ -31,7 +35,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h6"

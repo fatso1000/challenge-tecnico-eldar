@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
-import dialogStore from "../../store/dialogStore";
+import dialogStore from "@store/dialogStore";
 
 export default function FormDialog({
   title,

@@ -1,10 +1,10 @@
 import { Box, Button, CircularProgress, Grid2, TextField } from "@mui/material";
 import { useState } from "react";
-import PasswordInput from "../components/inputs/PasswordInput";
-import { signInUser } from "../queryFn";
-import { IUser } from "../types";
-import { signInUserAuth } from "../shared/authService";
-import alertStore from "../store/alertStore";
+import PasswordInput from "@components/shared/inputs/PasswordInput";
+import { signInUserAuth } from "@shared/authService";
+import alertStore from "@store/alertStore";
+import { signInUser } from "@queryFn/index";
+import { IUser } from "../../types";
 
 interface IErrors {
   email: string;

@@ -1,4 +1,4 @@
-import handleCustomApiRequest from "../shared/apiService";
+import handleCustomApiRequest from "@shared/apiService";
 
 const getUrl = "https://jsonplaceholder.typicode.com";
 

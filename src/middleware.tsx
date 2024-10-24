@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { UserRoleEnum } from "./types";
-import useStore from "./store/mainStore";
+import useStore from "@store/mainStore";
 
 interface ProtectedRouteProps {
   children: JSX.Element;

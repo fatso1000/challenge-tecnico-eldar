@@ -1,5 +1,5 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
-import { modalStyles } from "../../shared/constants";
+import { modalStyles } from "@shared/constants";
 
 function RemoveModal({
   isModalOpen,

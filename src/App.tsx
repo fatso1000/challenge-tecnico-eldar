@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./middleware";
 import { UserRoleEnum } from "./types";
-import UserPage from "./pages/user";
-import AdminPage from "./pages/admin";
-import LoginPage from "./pages/login";
+import UserPage from "@pages/dashboard/user";
+import AdminPage from "@pages/dashboard/admin";
+import LoginPage from "@pages/auth/login";
 
 const router = createBrowserRouter([
   {

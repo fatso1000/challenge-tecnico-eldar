@@ -1,51 +1,47 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CHALLENGE TÉCNICO ELDAR
 
-Currently, two official plugins are available:
+## Requisitos de instalación y ejecución de la aplicación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para instalar y ejecutar esta aplicación, puedes utilizar uno de los siguientes comandos según tu gestor de paquetes:
 
-## Expanding the ESLint configuration
+- **npm**:  
+  ```bash
+  npm install && npm run dev
+  ```
+- **pnpm**:  
+  ```bash
+  pnpm install && pnpm dev
+  ```
+- **yarn**:  
+  ```bash
+  yarn && yarn dev
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## DESCRIPCIÓN DE LA APLICACIÓN
 
-- Configure the top-level `parserOptions` property like this:
+La aplicación consta de una página de inicio de sesión. Debes iniciar sesión utilizando los datos proporcionados por la API de [JSONPlaceholder](https://jsonplaceholder.typicode.com/users).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Campo de Email**: Usa el correo electrónico del usuario **(email)**.
+- **Contraseña**: La contraseña es el nombre de usuario **(username)**.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Reglas de acceso:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Si el **ID** del usuario es impar, entonces el usuario es **admin**.
+- Si el **ID** es par, entonces el usuario no es **admin**.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# challenge-tecnico-eldar
+### Pantalla del **Administrador**:
+- Si inicias sesión como **admin**, verás un panel de control que muestra todos los posts de [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts).
+- Como **admin**, puedes **modificar**, **eliminar** y **agregar** posts a la lista. Estas acciones se realizan mediante solicitudes a la API, pero **la API no guarda los cambios**. Verás los datos modificados en tiempo real, pero se restablecerán al actualizar la página.
+
+### Pantalla de un **Usuario no Admin**:
+- Si inicias sesión como **usuario no admin**, verás la misma pantalla, pero **sin las acciones de agregar, editar o eliminar** posts.
+
+---
+
+## DETALLES TÉCNICOS
+
+La aplicación almacena los datos del usuario utilizando **Zustand** y los persiste en **localStorage**.
+
+- Existen tres **stores** en la aplicación: uno para **diálogos**, otro para **usuarios** y otro para **alertas**.
+- La aplicación utiliza un **middleware** para verificar si el usuario está autenticado y para determinar a qué rol (admin o usuario) pertenece. Esta funcionalidad se maneja dentro del **store de usuarios**.

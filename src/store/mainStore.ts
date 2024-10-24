@@ -12,6 +12,9 @@ type Actions = {
   signinUser: (user: IUser, userRole: UserRoleEnum) => void;
 };
 
+/**
+ * Store used for user variables and methods
+ */
 const userStore = create<State & Actions>()(
   persist(
     (set) => ({

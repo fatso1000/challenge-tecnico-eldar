@@ -14,6 +14,9 @@ type Actions = {
   closeAlert: () => void;
 };
 
+/**
+ * Store used for alerts messages
+ */
 const alertStore = create<State & Actions>()((set) => ({
   isOpen: false,
   message: "",

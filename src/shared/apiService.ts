@@ -1,10 +1,5 @@
+import { PetitionResponse } from "../types";
 import { HttpStatusCode } from "../types/httpStatusCode";
-
-interface PetitionResponse<T> {
-  errors: string[];
-  message: string | undefined;
-  data: T;
-}
 
 const handleCustomApiRequest = async <T = unknown>(
   request: string,

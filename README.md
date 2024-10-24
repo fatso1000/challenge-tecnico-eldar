@@ -37,11 +37,23 @@ La aplicación consta de una página de inicio de sesión. Debes iniciar sesión
 ### Pantalla de un **Usuario no Admin**:
 - Si inicias sesión como **usuario no admin**, verás la misma pantalla, pero **sin las acciones de agregar, editar o eliminar** posts.
 
----
-
 ## DETALLES TÉCNICOS
 
 La aplicación almacena los datos del usuario utilizando **Zustand** y los persiste en **localStorage**.
 
 - Existen tres **stores** en la aplicación: uno para **diálogos**, otro para **usuarios** y otro para **alertas**.
 - La aplicación utiliza un **middleware** para verificar si el usuario está autenticado y para determinar a qué rol (admin o usuario) pertenece. Esta funcionalidad se maneja dentro del **store de usuarios**.
+
+## ESTRUCTURA DEL PROYECTO
+
+**src  
+├── assets  
+├── components  
+│   ├── shared  
+│   └── specific  
+├── pages  
+│   ├── auth  
+│   └── dashboard  
+├── queryFn  
+├── store  
+└── types**
